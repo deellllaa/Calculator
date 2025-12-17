@@ -141,11 +141,11 @@ class ShaftCalculatorUI:
         diameter = float(diameter_str)
         length = float(length_str)
         
-        print(f"DEBUG: Calculating for diameter={diameter}, length={length}")  # این خط رو اضافه کن
+        print(f"DEBUG: Calculating for diameter={diameter}, length={length}")  
         
         result = self.calculator.calculate_final_weight(diameter, shape, length)
         
-        print(f"DEBUG: Result = {result}")  # این خط رو اضافه کن
+        print(f"DEBUG: Result = {result}")  
         
         if isinstance(result, str):
             self.result_label.config(text=result, fg="red")
@@ -155,15 +155,18 @@ class ShaftCalculatorUI:
 📏 قطر: {diameter} میلی‌متر
 📏 طول: {length} متر
 ⚖️ وزن: {result['final_weight']:.3f} کیلوگرم"""
-            self.result_label.config(text=message, fg="green")
+            self.result_label.config(text="محاسبه انجام شد", fg="green")
             
      except Exception as e:
-        print(f"ERROR: {e}")  # این خط رو اضافه کن
+        print(f"ERROR: {e}")  
         self.result_label.config(text="خطا در محاسبه", fg="red")     
 
 
     def run(self):
         self.window.mainloop()
+        
+        
+    
     
     
 if __name__ == "__main__":
